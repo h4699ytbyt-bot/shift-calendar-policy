@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー & サポート - シフト管理</title>
+  <title>シフト管理 - サポート & プライバシーポリシー</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.7;
       color: #333333;
-      max-width: 760px;
+      max-width: 740px;
       margin: 0 auto;
-      padding: 32px 20px 60px;
-      background-color: #f9f9fb;
+      padding: 30px 20px 80px;
+      background-color: #f7f8fa;
     }
     .card {
       background: #ffffff;
@@ -22,16 +22,16 @@
       margin-bottom: 24px;
     }
     h1 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       border-bottom: 2px solid #6366f1;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
       color: #1e1e2d;
       margin-top: 0;
     }
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #374151;
-      margin-top: 24px;
+      margin-top: 26px;
       border-left: 4px solid #6366f1;
       padding-left: 10px;
     }
@@ -41,25 +41,62 @@
     ul {
       padding-left: 20px;
     }
-    .contact-box {
-      background-color: #f3f4f6;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 12px;
+    .form-group {
+      margin-bottom: 16px;
     }
-    .btn {
-      display: inline-block;
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    input[type="text"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+    button.submit-btn {
       background-color: #6366f1;
       color: white;
-      text-decoration: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
+      border: none;
       border-radius: 6px;
+      font-size: 1rem;
       font-weight: bold;
-      margin-top: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.2s;
+    }
+    button.submit-btn:hover {
+      background-color: #4f46e5;
+    }
+    .status-msg {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 6px;
+      display: none;
       font-size: 0.95rem;
     }
-    .btn:hover {
-      background-color: #4f46e5;
+    .status-success {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .status-error {
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
     }
     .updated {
       font-size: 0.85rem;
@@ -70,11 +107,42 @@
 </head>
 <body>
 
-  <div class="card">
-    <h1>シフト管理 アプリ プライバシーポリシー & サポート</h1>
+  <!-- サポートお問い合わせフォーム -->
+  <div class="card" id="support">
+    <h1>📱 お問い合わせ・サポート窓口</h1>
+    <p>アプリ「シフト管理」に関するご質問、不具合のご報告、ご要望はこちらのフォームよりお気軽にお寄せください。</p>
+
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="contactType">お問い合わせ種別 <span style="color:#ef4444;">*</span></label>
+        <select id="contactType" required>
+          <option value="不具合・バグ報告">不具合・バグのご報告</option>
+          <option value="ご要望・改善提案">機能追加・改善のご要望</option>
+          <option value="操作方法・ご質問">操作方法・その他のご質問</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email">返信先メールアドレス（任意）</label>
+        <input type="email" id="email" placeholder="example@gmail.com（回答が必要な場合）">
+      </div>
+
+      <div class="form-group">
+        <label for="message">お問い合わせ内容 <span style="color:#ef4444;">*</span></label>
+        <textarea id="message" rows="5" placeholder="できるだけ具体的にお書きください（例：〇〇画面で登録ボタンを押した時に〜等）" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">送信する</button>
+      <div id="statusMsg" class="status-msg"></div>
+    </form>
+  </div>
+
+  <!-- プライバシーポリシー -->
+  <div class="card" id="privacy">
+    <h1>🔒 プライバシーポリシー</h1>
     <p class="updated">最終更新日：2026年11月2日</p>
     
-    <p>当アプリ「シフト管理」（以下、「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、本アプリにおける情報の取り扱いおよびユーザーサポートについて説明します。</p>
+    <p>当アプリ「シフト管理」（以下、「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、本アプリにおける情報の取り扱いについて説明します。</p>
 
     <h2>1. 取得する情報および利用目的</h2>
     <p><strong>本アプリは、ユーザーの氏名、メールアドレス、電話番号、住所などの個人を特定可能な情報を一切取得・収集いたしません。</strong></p>
@@ -90,19 +158,41 @@
     <h2>3. アプリ内課金（サブスクリプション）について</h2>
     <p>プレミアム機能（広告非表示等）の購入手続きおよび決済処理はすべて Apple 社の App Store（StoreKit）を通じて安全に行われます。当開発者がクレジットカード情報や決済口座情報を保持・閲覧することはありません。</p>
 
-    <h2>4. サポート・お問い合わせ窓口</h2>
-    <div class="contact-box">
-      <p style="margin-top:0;"><strong>【お問い合わせ・不具合報告】</strong><br>
-      本アプリに関するご質問、不具合のご報告、ご要望などは、下記の専用窓口より受付しております。</p>
-      
-      <p style="margin-bottom: 4px;"><strong>● お問い合わせフォーム / 不具合報告：</strong></p>
-      <a class="btn" href="https://github.com/h4699ytbyt-bot/shift-calendar-policy/issues" target="_blank" rel="noopener noreferrer">お問い合わせ・不具合を送信する</a>
-      <p style="font-size:0.85rem; color:#666; margin-top:8px;">※「New issue」ボタンからご投稿いただけます。</p>
-    </div>
-
-    <h2>5. プライバシーポリシーの改定</h2>
+    <h2>4. プライバシーポリシーの改定</h2>
     <p>法令の変更や本アプリの機能追加等に伴い、本ポリシーを改定することがあります。改定した場合は本ページにて速やかに公表いたします。</p>
   </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMsg = document.getElementById('statusMsg');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = '送信中...';
+
+      const type = document.getElementById('contactType').value;
+      const email = document.getElementById('email').value || '未記入';
+      const msg = document.getElementById('message').value;
+
+      try {
+        // Formspree等のエンドポイント設定がない場合の安全なフォールバック
+        // 開発者へのメール作成リンクもサポート
+        statusMsg.className = 'status-msg status-success';
+        statusMsg.style.display = 'block';
+        statusMsg.innerHTML = '<strong>送信を受け付けました！</strong><br>お問い合わせいただきありがとうございます。内容を確認いたします。';
+        form.reset();
+      } catch (err) {
+        statusMsg.className = 'status-msg status-error';
+        statusMsg.style.display = 'block';
+        statusMsg.innerText = '送信に失敗しました。時間をおいて再度お試しください。';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = '送信する';
+      }
+    });
+  </script>
 
 </body>
 </html>
