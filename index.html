@@ -3,196 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>シフト管理 - サポート & プライバシーポリシー</title>
+  <title>サポート＆よくあるご質問 (FAQ) - シフト管理</title>
   <style>
+    :root {
+      --primary-color: #00897B;
+      --bg-color: #F8FAF9;
+      --card-bg: #FFFFFF;
+      --text-color: #2D3748;
+      --subtext-color: #718096;
+      --border-color: #E2E8F0;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.7;
-      color: #333333;
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 30px 20px 80px;
-      background-color: #f7f8fa;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: #FFFFFF;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
     }
     .card {
-      background: #ffffff;
-      padding: 32px;
+      background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-      margin-bottom: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
     }
-    h1 {
-      font-size: 1.5rem;
-      border-bottom: 2px solid #6366f1;
-      padding-bottom: 10px;
-      color: #1e1e2d;
+    .section-title {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
       margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
     }
     h2 {
-      font-size: 1.2rem;
-      color: #374151;
-      margin-top: 26px;
-      border-left: 4px solid #6366f1;
-      padding-left: 10px;
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.4rem;
+      margin-top: 1.8rem;
+      font-size: 1.15rem;
     }
-    p, li {
-      font-size: 0.95rem;
+    .faq-item {
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.2rem;
     }
-    ul {
-      padding-left: 20px;
+    .faq-item:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-      color: #374151;
-    }
-    input[type="text"], input[type="email"], textarea, select {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      box-sizing: border-box;
-      font-family: inherit;
-    }
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #6366f1;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-    }
-    button.submit-btn {
-      background-color: #6366f1;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
+    .faq-q {
       font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 10px;
-      transition: background-color 0.2s;
+      font-size: 1.05rem;
+      color: #1A202C;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
     }
-    button.submit-btn:hover {
-      background-color: #4f46e5;
+    .faq-q::before {
+      content: "Q.";
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-right: 0.6rem;
     }
-    .status-msg {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 6px;
-      display: none;
+    .faq-a {
+      color: #4A5568;
+      padding-left: 1.8rem;
+    }
+    .contact-box {
+      background-color: #E6FFFA;
+      border: 1px solid #B2F5EA;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .contact-box h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      color: #234E52;
+      font-size: 1.3rem;
+    }
+    .contact-box p {
+      color: #4A5568;
       font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
     }
-    .status-success {
-      background-color: #ecfdf5;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
+    .btn-contact {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #FFFFFF;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 2px 4px rgba(0, 137, 123, 0.25);
     }
-    .status-error {
-      background-color: #fef2f2;
-      color: #991b1b;
-      border: 1px solid #fecaca;
+    .btn-contact:hover {
+      background-color: #00695C;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .contact-note {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--subtext-color);
     }
     .updated {
       font-size: 0.85rem;
-      color: #6b7280;
+      color: var(--subtext-color);
       text-align: right;
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--subtext-color);
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- サポートお問い合わせフォーム -->
+<header>
+  <h1>シフト管理 サポートセンター</h1>
+  <p>よくあるご質問 (FAQ) とお問い合わせ窓口</p>
+</header>
+
+<div class="container">
   <div class="card" id="support">
-    <h1>📱 お問い合わせ・サポート窓口</h1>
-    <p>アプリ「シフト管理」に関するご質問、不具合のご報告、ご要望はこちらのフォームよりお気軽にお寄せください。</p>
+    <h2 class="section-title">よくあるご質問 (FAQ)</h2>
 
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="contactType">お問い合わせ種別 <span style="color:#ef4444;">*</span></label>
-        <select id="contactType" required>
-          <option value="不具合・バグ報告">不具合・バグのご報告</option>
-          <option value="ご要望・改善提案">機能追加・改善のご要望</option>
-          <option value="操作方法・ご質問">操作方法・その他のご質問</option>
-        </select>
+    <div class="faq-item">
+      <div class="faq-q">会員登録やログインは必要ですか？</div>
+      <div class="faq-a">いいえ、一切不要です。アプリをインストールしたらすぐにシフト管理や給料計算、LINE提出文の作成などすべての機能をお使いいただけます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">バイト先を複数掛け持ちしていますが、分けて管理できますか？</div>
+      <div class="faq-a">はい、「設定」タブからバイト先ごとに名前、テーマカラー、基本時給、交通費、締め日、給料日、深夜手当や土日・時間帯別時給などを個別に登録して管理できます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">iPhoneの標準カレンダーに予定が反映されない場合はどうすればいいですか？</div>
+      <div class="faq-a">iPhone本体の「設定」アプリ ＞「アプリ（またはプライバシーとセキュリティ）」＞「カレンダー」＞「シフト管理」を開き、「フルアクセス」が許可されているかご確認ください。アプリ内の「提出・LINE」タブにある「詳しい設定方法を見る」からも画像付きの手順をご確認いただけます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">プレミアムプラン（月額350円）を解約したい場合はどうすればいいですか？</div>
+      <div class="faq-a">iPhone本体の「設定」アプリ ＞ 一番上の「ご自身の名前（Apple ID）」＞「サブスクリプション」から、いつでも簡単に確認・解約手続きが可能です。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">機種変更後にプレミアムプランを引き継ぐには？</div>
+      <div class="faq-a">同じApple IDでサインインした状態で、アプリ内の「設定」タブにある「購入を復元」ボタンをタップしてください。</div>
+    </div>
+
+    <div class="contact-box">
+      <h3>お問い合わせ・サポート窓口</h3>
+      <p>
+        「シフト管理」をご利用いただき誠にありがとうございます。<br>
+        アプリの不具合報告やご意見・ご要望、操作に関するご質問などは、下記のお問い合わせフォームより承っております。
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScy6YVZLoi2EXUen6djrDRtn7JmjQ_KomGQyPV3hsUeArJhaA/viewform" target="_blank" rel="noopener noreferrer" class="btn-contact">
+        お問い合わせフォームを開く
+      </a>
+      <div class="contact-note">
+        ※24時間受付 / 内容を確認の上、必要に応じて運営サポートよりご連絡いたします。
       </div>
-
-      <div class="form-group">
-        <label for="email">返信先メールアドレス（任意）</label>
-        <input type="email" id="email" placeholder="example@gmail.com（回答が必要な場合）">
-      </div>
-
-      <div class="form-group">
-        <label for="message">お問い合わせ内容 <span style="color:#ef4444;">*</span></label>
-        <textarea id="message" rows="5" placeholder="できるだけ具体的にお書きください（例：〇〇画面で登録ボタンを押した時に〜等）" required></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn" id="submitBtn">送信する</button>
-      <div id="statusMsg" class="status-msg"></div>
-    </form>
+    </div>
   </div>
 
-  <!-- プライバシーポリシー -->
   <div class="card" id="privacy">
-    <h1>🔒 プライバシーポリシー</h1>
-    <p class="updated">最終更新日：2026年11月2日</p>
-    
+    <h2 class="section-title">プライバシーポリシー</h2>
+    <p class="updated">最終改定日: 2026年11月4日</p>
+
     <p>当アプリ「シフト管理」（以下、「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、本アプリにおける情報の取り扱いについて説明します。</p>
 
     <h2>1. 取得する情報および利用目的</h2>
-    <p><strong>本アプリは、ユーザーの氏名、メールアドレス、電話番号、住所などの個人を特定可能な情報を一切取得・収集いたしません。</strong></p>
+    <p>本アプリは、ユーザーの氏名、メールアドレス、電話番号、住所などの個人を特定可能な情報をアプリ内で一切取得・収集いたしません。</p>
     <ul>
       <li><strong>シフト・給与データ：</strong>入力されたシフト日程、勤務先、時給、給与等の情報はすべてユーザーの端末内（ローカルストレージ）にのみ保存されます。外部のサーバーへ送信・蓄積されることはありません。</li>
-      <li><strong>端末内カレンダーへのアクセス：</strong>ユーザーが明示的に「カレンダー連携」機能を利用する場合に限り、端末の標準カレンダーへシフト情報を登録するためにアクセス権限を使用します。外部へカレンダー情報を送信することはありません。</li>
+      <li><strong>端末内カレンダーへのアクセス：</strong>ユーザーが明示的に「カレンダーに同期」機能を利用する場合に限り、端末の標準カレンダーへシフト情報を登録するためにアクセス権限を使用します。外部へカレンダー情報を送信することはありません。</li>
     </ul>
 
     <h2>2. 広告配信について</h2>
-    <p>本アプリでは、無料提供および開発運用の継続を目的として、第三者配信事業者（Google AdMob）による広告を表示しています。</p>
-    <p>広告配信事業者は、利用者に最適な広告を表示するために広告IDやCookie等の技術を使用して非個人情報を収集することがあります。Google による広告での情報利用の詳細は、<a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Google のポリシーと規約</a>をご確認ください。</p>
+    <p>本アプリでは、無料提供および開発運用の継続を目的として、第三者配信事業者（Google AdMob）による広告を表示しています。広告配信事業者は、利用者に適切な広告を表示するために広告ID等の非個人情報を利用する場合があります。詳細は <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Google の広告に関するポリシー</a> をご確認ください。</p>
 
     <h2>3. アプリ内課金（サブスクリプション）について</h2>
-    <p>プレミアム機能（広告非表示等）の購入手続きおよび決済処理はすべて Apple 社の App Store（StoreKit）を通じて安全に行われます。当開発者がクレジットカード情報や決済口座情報を保持・閲覧することはありません。</p>
+    <p>プレミアムプラン（月額350円）の購入手続きおよび決済処理はすべて Apple 社の App Store（StoreKit）を通じて安全に行われます。当運営がクレジットカード情報や決済口座情報を保持・閲覧することはありません。</p>
 
-    <h2>4. プライバシーポリシーの改定</h2>
-    <p>法令の変更や本アプリの機能追加等に伴い、本ポリシーを改定することがあります。改定した場合は本ページにて速やかに公表いたします。</p>
+    <h2>4. お問い合わせ窓口</h2>
+    <p>本ポリシーに関するお問い合わせは、本ページ上部の「お問い合わせフォームを開く」ボタンよりご連絡ください。</p>
   </div>
+</div>
 
-  <script>
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const statusMsg = document.getElementById('statusMsg');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerText = '送信中...';
-
-      const type = document.getElementById('contactType').value;
-      const email = document.getElementById('email').value || '未記入';
-      const msg = document.getElementById('message').value;
-
-      try {
-        // Formspree等のエンドポイント設定がない場合の安全なフォールバック
-        // 開発者へのメール作成リンクもサポート
-        statusMsg.className = 'status-msg status-success';
-        statusMsg.style.display = 'block';
-        statusMsg.innerHTML = '<strong>送信を受け付けました！</strong><br>お問い合わせいただきありがとうございます。内容を確認いたします。';
-        form.reset();
-      } catch (err) {
-        statusMsg.className = 'status-msg status-error';
-        statusMsg.style.display = 'block';
-        statusMsg.innerText = '送信に失敗しました。時間をおいて再度お試しください。';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerText = '送信する';
-      }
-    });
-  </script>
+<footer>
+  <p>© 2026 シフト管理 運営サポート All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
